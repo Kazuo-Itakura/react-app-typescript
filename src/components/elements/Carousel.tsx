@@ -23,6 +23,10 @@ const Carousel: React.FC<CarouselProps> = ({ carousel_parts }) => {
     setCurrentItem(currentItem === carousel_parts.length - 1 ? 0 : currentItem + 1);
   };
 
+  const handleIndicatorClick = (index: number) => {
+    setCurrentItem(index);
+  };
+
   return (
     <div>
       <ResponsiveCarousel
@@ -45,12 +49,13 @@ const Carousel: React.FC<CarouselProps> = ({ carousel_parts }) => {
           {'<'}
         </button>
         {carousel_parts.map((_, index) => (
-          <span
+          <button
             key={index}
             className={`mx-1 w-4 h-4 rounded-full ${
               index === currentItem ? 'bg-black' : 'bg-gray-300'
             }`}
-          ></span>
+            onClick={() => handleIndicatorClick(index)}
+          ></button>
         ))}
         <button className="ml-4" onClick={handleNextClick}>
           {'>'}

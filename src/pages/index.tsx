@@ -7,6 +7,10 @@ const carousel_parts = [
   <PostsList />,
   <PostsList />,
   <PostsList />,
+  <PostsList />,
+  <PostsList />,
+  <PostsList />,
+  <PostsList />,
 ];
 
 
