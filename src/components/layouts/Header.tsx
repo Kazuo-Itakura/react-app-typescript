@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className='h-28 block fixed w-full bg-white shadow-md z-50 flex items-center justify-between'>
       <div className=''>
-        <Image className='px-5 py-3' src="next.svg" alt="logo" width={250} height={250} />
+        <Image className='px-5 py-3' src="/next.svg" alt="logo" width={250} height={250} />
       </div>
       <div className='w-2/5'>
         <form className="">
