@@ -5,7 +5,7 @@ import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 interface CarouselProps {
-  carousel_parts: React.ReactNode[];
+  carousel_parts: React.ReactNode[][];
 }
 
 const Carousel: React.FC<CarouselProps> = ({ carousel_parts }) => {
@@ -40,8 +40,14 @@ const Carousel: React.FC<CarouselProps> = ({ carousel_parts }) => {
         centerSlidePercentage={50}
         onChange={handleSlideChange}
       >
-        {carousel_parts.map((part, index) => (
-          <div key={index}>{part}</div>
+        {carousel_parts.map((parts, index) => (
+          <div key={index} className="flex">
+            {parts.map((part, idx) => (
+              <div key={idx} className="w-1/2">
+                {part}
+              </div>
+            ))}
+          </div>
         ))}
       </ResponsiveCarousel>
       <div className="flex items-center justify-center mt-4">
